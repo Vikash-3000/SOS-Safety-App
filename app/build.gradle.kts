@@ -105,4 +105,5 @@ dependencies {
     androidTestImplementation ("androidx.test.ext:junit:$androidxJunitVersion")
 
 
+    implementation("com.daimajia.numberprogressbar:library:1.4@aar")
 }
