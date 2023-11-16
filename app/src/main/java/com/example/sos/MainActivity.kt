@@ -36,37 +36,21 @@ class MainActivity : AppCompatActivity(), Contact {
     private lateinit var viewModel: ContactViewModel
     private lateinit var binding : ActivityMainBinding
 
-    private val IGNORE_BATTERY_OPTIMIZATION_REQUEST = 1002
     private val PICK_CONTACT = 1
 
     companion object{
+        @SuppressLint("StaticFieldLeak")
         lateinit var context : Context
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        context = this
-        binding.btn.setBackgroundColor(Color.TRANSPARENT)
-        // check for runtime permissions
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(
-                    this,
-                    android.Manifest.permission.ACCESS_COARSE_LOCATION
-                ) == PackageManager.PERMISSION_DENIED
-            ) {
-                requestPermissions(
-                    arrayOf<String>(
-                        android.Manifest.permission.ACCESS_FINE_LOCATION,
-                        android.Manifest.permission.SEND_SMS,
-                        android.Manifest.permission.READ_CONTACTS
-                    ), 100
-                )
-            }
-        }
 
+        val sharedPreference =  getSharedPreferences("SOS",Context.MODE_PRIVATE)
 
         // this is a special permission required only by devices using
         // Android Q and above. The Access Background Permission is responsible
@@ -76,13 +60,10 @@ class MainActivity : AppCompatActivity(), Contact {
                 arrayOf<String>(Manifest.permission.ACCESS_BACKGROUND_LOCATION), 100)
         }
 
-        // check for BatteryOptimization,
-        val pm = getSystemService(POWER_SERVICE) as PowerManager
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (!pm.isIgnoringBatteryOptimizations(packageName)) {
-                askIgnoreOptimization()
-            }
-        }
+        context = this
+        binding.btn.setBackgroundColor(Color.TRANSPARENT)
+
+        binding.user.text = "Hey, ${sharedPreference.getString("name", "User")}!!!"
 
         // start the service
         val sensorService = SensorService()
@@ -206,17 +187,6 @@ class MainActivity : AppCompatActivity(), Contact {
 
                 }
             }
-        }
-    }
-
-    // this method prompts the user to remove any
-    // battery optimisation constraints from the App
-    private fun askIgnoreOptimization() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            @SuppressLint("BatteryLife") val intent =
-                Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)
-            intent.data = Uri.parse("package:$packageName")
-            startActivityForResult(intent, IGNORE_BATTERY_OPTIMIZATION_REQUEST)
         }
     }
 

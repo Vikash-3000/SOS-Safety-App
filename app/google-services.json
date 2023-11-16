@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "783613101331",
+    "project_id": "sos-emergency-cbe51",
+    "storage_bucket": "sos-emergency-cbe51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783613101331:android:0ee7d46f9f0b2b07c046e6",
+        "android_client_info": {
+          "package_name": "com.example.sos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRgqvGIgPr0G6ms15VFVznZkrI1y0jmJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
