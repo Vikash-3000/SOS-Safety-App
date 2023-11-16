@@ -69,7 +69,7 @@ class SensorService : Service(){
         mShakeDetector = ShakeDetector()
         mShakeDetector!!.setOnShakeListener(object : OnShakeListener {
             @RequiresApi(Build.VERSION_CODES.M)
-            @SuppressLint("MissingPermission")
+            @SuppressLint("MissingPermission", "SuspiciousIndentation")
             override fun onShake(count: Int) {
                 // check if the user has shacked
                 // the phone for 3 time in a row

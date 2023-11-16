@@ -1,6 +1,7 @@
 package com.example.sos
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -43,7 +44,13 @@ class SplashActivity : AppCompatActivity() {
             Log.d("SHOW", i.toString())
             progress.progress = i
         }
-        startActivity(Intent(this, MainActivity::class.java))
+        val sharedPreference =  getSharedPreferences("SOS", Context.MODE_PRIVATE)
+        val login = sharedPreference.getBoolean("login", false)
+        if(login){
+            startActivity(Intent(this, MainActivity::class.java))
+        }else{
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
         finish()
     }
 

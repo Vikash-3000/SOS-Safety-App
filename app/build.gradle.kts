@@ -4,6 +4,7 @@ plugins {
     id ("kotlin-android")
     id ("kotlin-kapt")
     id("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -37,9 +38,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    packagingOptions {
-        exclude ("META-INF/atomicfu.kotlin_module")
-    }
+    packagingOptions { exclude("META-INF/atomicfu.kotlin_module") }
 
     kotlinOptions {
         jvmTarget = "1.8"
@@ -48,15 +47,16 @@ android {
 
 dependencies {
     implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.firebase:firebase-auth:22.2.0")
     val kotlin_version = "1.9.0"
     val activityVersion = "1.8.0"
     val appCompatVersion = "1.6.1"
     val constraintLayoutVersion = "2.1.4"
     val coreTestingVersion = "2.2.0"
-    val coroutines = "1.6.4"
+    val coroutines = "1.7.1"
     val lifecycleVersion = "2.6.2"
     val materialVersion = "1.10.0"
-    val roomVersion = "2.5.2"
+    val roomVersion = "2.6.0"
     // testing
     val junitVersion = "4.13.2"
     val espressoVersion = "3.4.0"
@@ -104,6 +104,8 @@ dependencies {
     }
     androidTestImplementation ("androidx.test.ext:junit:$androidxJunitVersion")
 
-
-    implementation("com.daimajia.numberprogressbar:library:1.4@aar")
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 }
