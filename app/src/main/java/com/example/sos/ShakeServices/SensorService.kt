@@ -9,6 +9,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.location.Location
@@ -20,11 +21,14 @@ import android.os.Vibrator
 import android.telephony.SmsManager
 import android.util.Log
 import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 import com.example.sos.CAdapter
 import com.example.sos.MainActivity
 import com.example.sos.R
 import com.example.sos.ShakeServices.ShakeDetector.OnShakeListener
+import com.example.sos.SplashActivity
 import com.google.android.gms.location.LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.CancellationToken
@@ -39,7 +43,6 @@ class SensorService : Service(){
     private var mSensorManager: SensorManager? = null
     private var mAccelerometer: Sensor? = null
     private var mShakeDetector: ShakeDetector? = null
-    private lateinit var activity: MainActivity
 
     override fun onBind(intent: Intent?): IBinder? {
         // TODO: Return the communication channel to the service.
@@ -61,8 +64,6 @@ class SensorService : Service(){
             1,
             Notification()
         )
-
-        activity = MainActivity()
 
         mSensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         mAccelerometer = mSensorManager!!.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
@@ -122,8 +123,6 @@ class SensorService : Service(){
                                     )
                             }
 
-                            //call(CAdapter.allContacts[0].phone)
-
                         } else {
                             val message = """
                         I am in DANGER, i need help. Please urgently reach me out.
@@ -160,6 +159,17 @@ class SensorService : Service(){
         // register the listener
         mSensorManager!!.registerListener(mShakeDetector, mAccelerometer, SensorManager.SENSOR_DELAY_UI)
 
+    }
+
+    private fun call(no : String) {
+        if(ContextCompat.checkSelfPermission(MainActivity.activity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(MainActivity.activity, arrayOf(Manifest.permission.CALL_PHONE), 100)
+        }
+
+        val dialIntent = Intent(Intent.ACTION_CALL)
+        dialIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        dialIntent.data = Uri.parse("tel:${no}")
+        MainActivity.activity.startActivity(dialIntent)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -207,12 +217,4 @@ class SensorService : Service(){
         this.sendBroadcast(broadcastIntent)
         super.onDestroy()
     }
-
-//    fun call(no : String) {
-//        val dialIntent = Intent(Intent.ACTION_CALL)
-//        dialIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//        dialIntent.data = Uri.parse("tel:${no}")
-//
-//        startActivity(dialIntent)
-//    }
 }

@@ -9,17 +9,13 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.PowerManager
 import android.provider.ContactsContract
-import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,6 +37,8 @@ class MainActivity : AppCompatActivity(), Contact {
     companion object{
         @SuppressLint("StaticFieldLeak")
         lateinit var context : Context
+        @SuppressLint("StaticFieldLeak")
+        lateinit var activity: MainActivity
     }
 
     @SuppressLint("SetTextI18n")
@@ -49,6 +47,7 @@ class MainActivity : AppCompatActivity(), Contact {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        activity = this@MainActivity
 
         val sharedPreference =  getSharedPreferences("SOS",Context.MODE_PRIVATE)
 
