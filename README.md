@@ -1,7 +1,9 @@
 # SOS-Safety-App
 This is an SOS emergency android app, that can rescue us/our loved ones by shaking the phone 3 times. if we are in life-threatening emergency situation then need help. we don’t have time to open our phone, instead, we need some accessibility by which we can reach out for help without actually operating the phone.
-# DemoVideo
+# DemoVideo-1
 [![SOS-Safety-App](https://img.youtube.com/vi/3EDkhrA3-9I/0.jpg)](https://www.youtube.com/watch?v=3EDkhrA3-9I)
+# DemoVideo-2
+[![SOS-Safety-App](https://img.youtube.com/vi/3EDkhrA3-9I/0.jpg)](https://www.youtube.com/shorts/02ftI3VudSs)
 # Screenshots
 <div class="row">
       <img src="https://github.com/Vikash-3000/SOS-Safety-App/blob/main/screenshots/1700650139406.jpg" width="250">
