@@ -9,17 +9,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
             android:layout_gravity="center"
             android:background="@drawable/home_icon_bg"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,9 +28,9 @@
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="30dp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_30sdp"
                 android:src="@drawable/alert2"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
                 android:fontFamily="serif"
                 android:text="SOS"
                 android:textColor="@color/white"
-                android:textSize="80sp"
+                android:textSize="@dimen/_78sdp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -62,9 +62,9 @@
             android:gravity="center"
             android:text="Verify your\nPhone number"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="@dimen/_23sdp"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/_20sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -84,11 +84,10 @@
                 android:background="@drawable/contact_bg"
                 android:fontFamily="sans-serif-medium"
                 android:hint="Enter your name"
-                android:letterSpacing=".4"
-                android:padding="10dp"
-                android:paddingStart="20dp"
+                android:padding="@dimen/_6sdp"
+                android:paddingStart="@dimen/_16sdp"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16sdp"
                 app:layout_constraintBottom_toTopOf="@id/ll"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/contact_bg"
-                android:padding="10dp"
+                android:padding="@dimen/_6sdp"
                 app:layout_constraintBottom_toTopOf="@+id/btn_ll"
                 app:layout_constraintTop_toBottomOf="@+id/name">
 
@@ -105,11 +104,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:letterSpacing=".4"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="@dimen/_10sdp"
                     android:text="+91 "
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_16sdp" />
 
                 <EditText
                     android:inputType="phone"
@@ -118,9 +116,8 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:fontFamily="sans-serif-medium"
-                    android:letterSpacing=".4"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_16sdp"
                     android:maxLength="10"
                     tools:ignore="TextFields" />
 
@@ -141,7 +138,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="SEND OTP"
                     android:textColor="@color/white"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/_14sdp" />
 
             </LinearLayout>
 
@@ -162,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:text="Enter your OTP code here"
                 android:textColor="@color/gray"
-                android:textSize="18sp"
+                android:textSize="@dimen/_14sdp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -188,10 +185,10 @@
                     android:hint="0"
                     android:inputType="numberDecimal"
                     android:maxLength="1"
-                    android:padding="10dp"
-                    android:paddingStart="13dp"
-                    android:paddingEnd="13dp"
-                    android:textSize="18sp"
+                    android:padding="@dimen/_7sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     tools:ignore="Autofill,HardcodedText,TextFields" />
 
@@ -199,16 +196,16 @@
                     android:id="@+id/t2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:background="@drawable/otp_bg"
                     android:fontFamily="serif"
                     android:hint="0"
                     android:inputType="numberDecimal"
                     android:maxLength="1"
-                    android:padding="10dp"
-                    android:paddingStart="13dp"
-                    android:paddingEnd="13dp"
-                    android:textSize="18sp"
+                    android:padding="@dimen/_7sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     tools:ignore="Autofill,HardcodedText,TextFields" />
 
@@ -216,16 +213,16 @@
                     android:id="@+id/t3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:background="@drawable/otp_bg"
                     android:fontFamily="serif"
                     android:hint="0"
                     android:inputType="numberDecimal"
                     android:maxLength="1"
-                    android:padding="10dp"
-                    android:paddingStart="13dp"
-                    android:paddingEnd="13dp"
-                    android:textSize="18sp"
+                    android:padding="@dimen/_7sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     tools:ignore="Autofill,HardcodedText,TextFields" />
 
@@ -233,16 +230,16 @@
                     android:id="@+id/t4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:background="@drawable/otp_bg"
                     android:fontFamily="serif"
                     android:hint="0"
                     android:inputType="numberDecimal"
                     android:maxLength="1"
-                    android:padding="10dp"
-                    android:paddingStart="13dp"
-                    android:paddingEnd="13dp"
-                    android:textSize="18sp"
+                    android:padding="@dimen/_7sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     tools:ignore="Autofill,HardcodedText,TextFields" />
 
@@ -250,16 +247,16 @@
                     android:id="@+id/t5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:background="@drawable/otp_bg"
                     android:fontFamily="serif"
                     android:hint="0"
                     android:maxLength="1"
-                    android:padding="10dp"
                     android:inputType="numberDecimal"
-                    android:paddingStart="13dp"
-                    android:paddingEnd="13dp"
-                    android:textSize="18sp"
+                    android:padding="@dimen/_7sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     tools:ignore="Autofill,HardcodedText,TextFields" />
 
@@ -267,16 +264,16 @@
                     android:id="@+id/t6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:background="@drawable/otp_bg"
                     android:fontFamily="serif"
                     android:hint="0"
                     android:inputType="numberDecimal"
                     android:maxLength="1"
-                    android:padding="10dp"
-                    android:paddingStart="13dp"
-                    android:paddingEnd="13dp"
-                    android:textSize="18sp"
+                    android:padding="@dimen/_7sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textSize="@dimen/_14sdp"
                     android:textStyle="bold"
                     tools:ignore="Autofill,HardcodedText,TextFields" />
 
@@ -296,7 +293,7 @@
                     android:layout_height="wrap_content"
                     android:text="Didn't you receive any code ?"
                     android:textColor="@color/gray"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/_14sdp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -304,7 +301,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/sos_color"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/_13sdp"
                     android:textStyle="bold"/>
 
             </LinearLayout>
@@ -313,11 +310,11 @@
                 android:id="@+id/reenter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="@dimen/_35sdp"
                 android:text="Re-enter no."
                 android:textAllCaps="true"
                 android:textColor="@color/sos_color"
-                android:textSize="18sp"
+                android:textSize="@dimen/_13sdp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/verify_ll"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -339,7 +336,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="VERIFY"
                     android:textColor="@color/white"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/_14sdp"
                     tools:ignore="HardcodedText" />
 
                 <LinearLayout
@@ -354,7 +351,7 @@
                         android:id="@+id/progress"
                         android:layout_gravity="center_vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"/>
+                        android:layout_height="@dimen/_25sdp"/>
                 </LinearLayout>
 
             </FrameLayout>

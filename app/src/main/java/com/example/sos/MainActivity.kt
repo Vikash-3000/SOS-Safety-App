@@ -104,6 +104,7 @@ class MainActivity : AppCompatActivity(), Contact {
         return false
     }
 
+
     fun submitData(view : View){
         if (CAdapter.allContacts.size < 5) {
             val intent = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
