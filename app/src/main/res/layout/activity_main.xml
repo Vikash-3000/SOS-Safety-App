@@ -31,22 +31,22 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_220sdp"
             android:layout_gravity="center"
             android:background="@drawable/home_icon_bg"
             tools:ignore="MissingConstraints">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:src="@drawable/alert2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
                 android:fontFamily="serif"
                 android:text="SOS"
                 android:textColor="@color/white"
-                android:textSize="70sp"
+                android:textSize="@dimen/_60sdp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,10 +70,10 @@
 
         <TextView
             android:id="@+id/user"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
+            android:textSize="@dimen/_18sdp"
             android:layout_gravity="center"
             android:textColor="@color/black"
             android:textFontWeight="600"
@@ -81,8 +81,8 @@
             android:fontFamily="serif"/>
 
         <FrameLayout
-            android:layout_width="180dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_30sdp"
             android:layout_height="wrap_content"
             android:background="@drawable/list_bg"
             android:layout_gravity="center">
@@ -93,14 +93,16 @@
                 android:layout_height="wrap_content"
                 android:onClick="submitData"
                 android:text="Add Contact"
-                android:layout_marginLeft="35dp"
-                android:textSize="20sp"
+                android:layout_marginLeft="@dimen/_35sdp"
+                android:textSize="@dimen/_16sdp"
                 android:textAllCaps="false" />
 
             <ImageView
+                android:id="@+id/add"
+                android:onClick="submitData"
                 android:layout_gravity="center_vertical"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
                 android:layout_marginLeft="13dp"
                 android:src="@drawable/add_user"/>
 
@@ -110,7 +112,7 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn"
             tools:listitem="@layout/contact_item" />

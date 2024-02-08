@@ -108,4 +108,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+
+    //responsive
+    implementation ("com.intuit.sdp:sdp-android:1.1.0")
 }

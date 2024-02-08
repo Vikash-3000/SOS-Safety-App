@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="@dimen/_10sdp"
     android:id="@+id/list"
     android:background="@drawable/list_bg"
     android:layout_height="wrap_content">
@@ -14,10 +14,11 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="@dimen/_16sdp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/item_ph"
@@ -26,7 +27,7 @@
         android:fontFamily="sans-serif-light"
         android:textFontWeight="300"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintTop_toBottomOf="@+id/item_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
